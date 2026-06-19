@@ -1,0 +1,70 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.section {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: $radius-lg;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__trigger {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: var(--spacing-md);
+    transition: background $transition-fast;
+
+    &:hover {
+      background: var(--bg-color);
+    }
+  }
+
+  &__titleGroup {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary-color);
+    margin: 2px 0 0 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding-right: var(--spacing-md);
+    flex-shrink: 0;
+  }
+
+  &__chevron {
+    color: var(--text-secondary-color);
+    flex-shrink: 0;
+    display: block;
+  }
+
+  &__body {
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+  }
+}

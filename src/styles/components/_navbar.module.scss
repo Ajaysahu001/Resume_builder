@@ -1,0 +1,108 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.nav {
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  &__logoMark {
+    width: 32px;
+    height: 32px;
+    background: $primary-color;
+    color: white;
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+  }
+
+  &__logoText {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color);
+    letter-spacing: -0.3px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+
+  &__link {
+    padding: 6px 12px;
+    border-radius: $radius-md;
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary-color);
+    transition: color $transition-fast, background $transition-fast;
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--text-color);
+      background: var(--bg-color);
+    }
+
+    &--active {
+      color: $primary-color;
+      background: rgba($primary-color, 0.08);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+  }
+
+  &__themeBtn {
+    @include button-reset;
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background $transition-fast;
+
+    &:hover {
+      background: var(--bg-color);
+    }
+  }
+
+  &__cta {
+    @include button-primary;
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    padding: 8px 16px;
+    white-space: nowrap;
+  }
+}

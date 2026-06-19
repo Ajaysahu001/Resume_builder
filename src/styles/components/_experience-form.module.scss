@@ -1,0 +1,104 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: $primary-color;
+  }
+}
+
+.achievements {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary-color);
+  }
+
+  &__hint {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary-color);
+    font-style: italic;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  &__bullet {
+    color: var(--text-secondary-color);
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  &__input {
+    flex: 1;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid var(--border-color);
+    border-radius: $radius-md;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--font-size-sm);
+    font-family: inherit;
+    transition: border-color $transition-base, box-shadow $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+
+    &::placeholder {
+      color: var(--text-secondary-color);
+    }
+  }
+
+  &__remove {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--text-secondary-color);
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    transition: all $transition-fast;
+
+    &:hover {
+      background: #fef2f2;
+      border-color: #fca5a5;
+      color: #ef4444;
+    }
+  }
+}

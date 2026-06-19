@@ -1,0 +1,134 @@
+@import '../base/variables';
+
+.ats {
+  position: relative;
+
+  &__toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: $radius-md;
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    transition: box-shadow 150ms;
+
+    &:hover {
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__score {
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary-color);
+    line-height: 1;
+  }
+
+  &__panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 300px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: $radius-lg;
+    box-shadow: $shadow-xl;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-color);
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--text-secondary-color);
+    line-height: 1;
+    padding: 0;
+
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  &__bar {
+    height: 6px;
+    background: var(--border-color);
+    margin: 0 1rem;
+  }
+
+  &__fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
+  &__pass,
+  &__fail {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  &__pass {
+    color: var(--text-color);
+    opacity: 0.75;
+  }
+
+  &__fail {
+    color: var(--text-color);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    font-weight: 700;
+    width: 14px;
+    text-align: center;
+  }
+
+  &__pass &__icon {
+    color: #10b981;
+  }
+
+  &__fail &__icon {
+    color: #ef4444;
+  }
+
+  &__hint {
+    color: var(--text-secondary-color);
+    font-style: italic;
+  }
+}

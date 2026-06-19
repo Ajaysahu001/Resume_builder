@@ -1,0 +1,197 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.resume {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: #1e293b;
+  line-height: 1.55;
+  font-size: 10pt;
+  background: #fff;
+
+  &__header {
+    border-bottom: 3px solid #2563eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__headerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  &__name {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #2563eb;
+    margin: 0;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  &__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 9pt;
+    color: #64748b;
+  }
+
+  &__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 9pt;
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+  }
+
+  &__section {
+    margin-bottom: 1.1rem;
+    page-break-inside: avoid;
+  }
+
+  &__sectionTitle {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1.5px solid #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    page-break-after: avoid;
+  }
+
+  &__summary {
+    font-size: 10pt;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0;
+  }
+
+  &__item {
+    margin-bottom: 0.85rem;
+    page-break-inside: avoid;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__itemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.2rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  &__itemTitle {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+  }
+
+  &__itemSubtitle {
+    font-size: 9.5pt;
+    color: #64748b;
+    margin: 2px 0 0 0;
+  }
+
+  &__itemDates {
+    font-size: 9pt;
+    color: #64748b;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  &__itemDescription {
+    font-size: 9.5pt;
+    color: #475569;
+    line-height: 1.6;
+    margin-top: 0.3rem;
+  }
+
+  &__achievements {
+    margin: 0.3rem 0 0 1.1rem;
+    padding: 0;
+    list-style: disc;
+
+    li {
+      font-size: 9.5pt;
+      color: #475569;
+      margin-bottom: 0.15rem;
+      line-height: 1.55;
+    }
+  }
+
+  &__itemLinks {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 9pt;
+    margin-top: 0.2rem;
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+  }
+
+  &__itemTech {
+    font-size: 9pt;
+    color: #64748b;
+    margin-top: 0.2rem;
+    font-style: italic;
+  }
+
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  &__skill {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 9pt;
+    font-weight: 500;
+  }
+
+  &__languages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__language {
+    font-size: 9.5pt;
+    color: #475569;
+  }
+}
+
+@media print {
+  .resume {
+    font-size: 9.5pt;
+
+    &__section {
+      page-break-inside: avoid;
+      margin-bottom: 0.9rem;
+    }
+
+    &__item {
+      page-break-inside: avoid;
+    }
+
+    &__sectionTitle {
+      page-break-after: avoid;
+    }
+  }
+}

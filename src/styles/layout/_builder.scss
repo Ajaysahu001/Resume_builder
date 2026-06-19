@@ -1,0 +1,113 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.builder {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-color);
+
+  &__sidebar {
+    width: 320px;
+    background: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    @include custom-scrollbar(var(--border-color), var(--surface-color));
+    transition: transform var(--transition-base);
+
+    @include respond-to(md) {
+      width: 360px;
+    }
+
+    &--collapsed {
+      transform: translateX(-100%);
+      position: absolute;
+      z-index: var(--z-fixed);
+      height: 100vh;
+    }
+  }
+
+  &__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__header {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    @include flex-between;
+    gap: var(--spacing-md);
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__form-panel {
+    flex: 0 0 50%;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    @include custom-scrollbar(var(--border-color), var(--bg-color));
+
+    @include respond-to(md) {
+      padding: var(--spacing-xl);
+    }
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__preview-panel {
+    flex: 0 0 50%;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    background: var(--surface-color);
+    border-left: 1px solid var(--border-color);
+    @include custom-scrollbar(var(--border-color), var(--surface-color));
+
+    @include respond-to(md) {
+      padding: var(--spacing-xl);
+    }
+  }
+
+  &__preview-container {
+    max-width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: white;
+    box-shadow: var(--shadow-xl);
+    padding: 15mm 15mm;
+    color: #1e293b;
+  }
+}
+
+@media print {
+  .builder {
+    &__sidebar,
+    &__header,
+    &__form-panel {
+      display: none !important;
+    }
+
+    &__preview-panel {
+      border: none;
+      padding: 0;
+      background: white;
+    }
+
+    &__preview-container {
+      box-shadow: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+

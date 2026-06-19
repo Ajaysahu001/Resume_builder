@@ -1,0 +1,108 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 0 var(--spacing-lg);
+  height: 56px;
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex: 0 0 auto;
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: $radius-md;
+    color: var(--text-secondary-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background $transition-fast, color $transition-fast;
+
+    &:hover {
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+  }
+
+  &__brand {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
+    white-space: nowrap;
+  }
+
+  &__center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    min-width: 0;
+  }
+
+  &__templateSelect {
+    width: 160px;
+    flex-shrink: 0;
+  }
+
+  &__viewModes {
+    display: flex;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: $radius-md;
+    padding: 2px;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  &__viewBtn {
+    background: none;
+    border: none;
+    padding: 4px 10px;
+    border-radius: calc(#{$radius-md} - 2px);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary-color);
+    cursor: pointer;
+    transition: all $transition-fast;
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--text-color);
+    }
+
+    &--active {
+      background: var(--surface-color);
+      color: var(--text-color);
+      box-shadow: $shadow-sm;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    flex: 0 0 auto;
+  }
+
+  &__divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border-color);
+    margin: 0 2px;
+  }
+}

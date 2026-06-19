@@ -205,4 +205,3 @@ This project follows industry best practices:
 
 Built with ❤️ using Next.js and Redux Toolkit
 # Resume_builder
-# Resume_builder

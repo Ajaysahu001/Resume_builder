@@ -1,0 +1,124 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.resume {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #111827;
+  line-height: 1.6;
+  font-size: 10pt;
+  background: #fff;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__name {
+    font-size: 20pt;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 0.4rem;
+    color: #111827;
+  }
+
+  &__contact {
+    font-size: 9pt;
+    color: #6b7280;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__summary {
+    text-align: center;
+    font-size: 9.5pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem;
+    line-height: 1.65;
+  }
+
+  &__section {
+    margin-bottom: 1.25rem;
+    page-break-inside: avoid;
+  }
+
+  &__sectionTitle {
+    font-size: 7.5pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 0.75rem;
+    color: #9ca3af;
+    text-align: center;
+    page-break-after: avoid;
+  }
+
+  &__item {
+    margin-bottom: 0.85rem;
+    page-break-inside: avoid;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__itemRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.15rem;
+  }
+
+  &__itemTitle {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+
+  &__itemDate {
+    font-size: 8.5pt;
+    color: #9ca3af;
+    white-space: nowrap;
+  }
+
+  &__itemCompany {
+    font-size: 9pt;
+    color: #6b7280;
+    margin: 2px 0 0.2rem;
+  }
+
+  &__itemDescription {
+    font-size: 9.5pt;
+    color: #374151;
+    line-height: 1.6;
+    margin-top: 0.25rem;
+  }
+
+  &__skills {
+    text-align: center;
+    font-size: 9.5pt;
+    color: #6b7280;
+    line-height: 1.8;
+  }
+}
+
+@media print {
+  .resume {
+    font-size: 9.5pt;
+
+    &__section {
+      page-break-inside: avoid;
+    }
+
+    &__item {
+      page-break-inside: avoid;
+    }
+  }
+}
